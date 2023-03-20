@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Expenses chart component</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Script -->
+    <script src="script.js" defer></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sumar">
+      <div class="text">
+        <h2>My balance</h2>
+        <strong>$921.48</strong>
+      </div>
+      <img class="logo" src="./images/logo.svg" alt="Logo" />
+    </div>
+    <div class="extended">
+      <h1>Spending - Last 7 days</h1>
+      <div class="chart">
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+        <div class="chart-group">
+          <div class="money-spend"></div>
+          <div class="column"></div>
+          <div class="column-day"></div>
+        </div>
+      </div>
+      <div class="other-infos">
+        <div class="left">
+          <h3>Total this month</h3>
+          <strong id="totalSpend"></strong>
+        </div>
+        <div class="right">
+          <h4>+2.4%</h4>
+          <span>from last month</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

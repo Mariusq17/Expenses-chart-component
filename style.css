@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--Font-size);
+}
+:root {
+/* Colors */
+
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+
+    --Font-size: 18px;
+    --card-size: 450px;
+    --padding: 20px;
+    --logo-size: 75px;
+
+    --column-height: 150px;
+    --column-width: 100%;
+}
+body { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    background-color: var(--Cream);
+}
+.sumar {
+    width: min(var(--card-size), 80%);
+    padding: var(--padding);
+    background-color: var(--Soft-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    color: white;
+}
+.sumar .text {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.sumar h2 {
+    font-size: calc(.8 * var(--Font-size));
+    font-weight: 400;
+}
+.sumar strong {
+    font-size: calc(1.25 * var(--Font-size));
+    font-weight: 700;
+}
+.sumar .logo {
+    width: min(var(--logo-size), 80%);
+}
+.extended {
+    width: min(var(--card-size), 80%);
+    padding: calc(1.5 * var(--padding));
+    background-color: var(--Very-pale-orange);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.extended h1 {
+    font-size: calc(1.5 * var(--Font-size));
+    color: var(--Dark-brown);
+    font-weight: 700;
+}
+.extended .chart {
+    display: grid;
+    min-height: calc(var(--column-height) + 10px);
+    grid-template-columns: repeat(7, 1fr);
+    gap: .5rem;
+    align-items: end;
+    justify-items: start;
+    border-bottom: 2px solid var(--Cream);
+    padding-bottom: 1rem;
+}
+.extended .chart .chart-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+.extended .chart .chart-group .column {
+    --procent: 1;
+
+    width: var(--column-width);
+    height: calc(var(--column-height) * var(--procent));
+    background-color: red;
+    border-radius: .5rem;
+    background-color: var(--Soft-red);
+    cursor: pointer;
+}
+.extended .chart .chart-group .column.active {
+    background-color: var(--Cyan);
+}
+.extended .chart .chart-group .column-day {
+    color: var(--Medium-brown);
+    font-size: calc(.85 * var(--Font-size));
+    width: min(100%, 30px);
+    text-align: center;
+}
+.extended .chart .chart-group .money-spend {
+    padding: 5px;
+    background-color: var(--Dark-brown);
+    border-radius: .25rem;
+    color: white;
+    font-weight: 700;
+    font-size: calc(.75 * var(--Font-size));
+    width: min(110%, 50px);
+    text-align: center;
+    opacity: 0;
+    transition: 300ms;
+}
+.extended .chart .chart-group .money-spend.active {
+    opacity: 1;
+}
+.extended .other-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.extended .other-infos .left,
+.extended .other-infos .right {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: .5rem;
+}
+.extended .other-infos .right {
+    align-items: flex-end;
+    text-align: end;
+}
+.extended .other-infos .left h3,
+.extended .other-infos .right span{
+    font-size: calc(.8 * var(--Font-size));
+    font-weight: 400;
+    color: var(--Medium-brown);
+}
+.extended .other-infos .left strong {
+    font-size: calc(2 * var(--Font-size));
+    font-weight: 700;
+    color: var(--Dark-brown);
+}
+.extended .other-infos .right h4 {
+    font-size: var(--Font-size);
+    font-weight: 700;
+    color: var(--Dark-brown);
+}
+
+@media (max-width: 550px) {
+    :root {
+        --column-height: 25px;
+        --column-width: 200px;
+        --Font-size: 16px;
+    }
+    .extended .chart {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .extended .chart .chart-group {
+        flex-direction: row-reverse;
+    }
+    .extended .chart .chart-group .column {
+        height: var(--column-height);
+        width: calc(var(--column-width) * var(--procent));
+    }
+    .extended .chart .chart-group .column-day {
+        text-align: start;
+    }
+}
+@media (max-width: 400px) {
+    :root {
+        --column-width: 150px;
+        --Font-size: 15px;
+    }
+}
+@media (max-width: 325px) {
+    :root {
+        --column-width: 100px;
+        --Font-size: 14px;
+    }
+}
